@@ -36,6 +36,13 @@ class TasksController < ApplicationController
 		end
 	end
 
+	def destroy 
+		@task = Task.find(params[:id])
+		@task.destroy 
+		flash[:notice] = "Destroy a task"
+		redirect_to tasks_path 
+	end
+
 	private
 		def task_params
 			params.require(:task).permit(:content, :deadline, :done, :comment)
