@@ -1,0 +1,23 @@
+<h1>Add todo Task</h1>
+<%= form_for(@task) do |f| %>
+	<div class="field">
+		<p>
+		<%= f.label :ToDo%>
+		<%= f.text_field :content, size: 25 %>
+		</p>
+		<p>
+		<%= f.label :Deadline%>
+		<%= f.date_field :deadline %> 
+		</p>
+		<p>
+		<%= f.label :Finish?%>
+		<%= f.check_box :done, {class: 'cnk'}, true, false %>
+		</p>
+		<p>
+		<%= f.label :コメント%>
+		<%= f.text_field :comment, size: 25 %>
+		</p>
+
+		<%= f.submit %>
+	</div>
+<% end %>
