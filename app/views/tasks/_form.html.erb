@@ -1,3 +1,15 @@
+<% if task.errors.any? %>
+	<div id="error_explanation">
+		<h2><%= pluralize(task.errors.count, "error") %> prohibited this book from 
+		being saved:</h2>
+
+		<ul>
+		<% task.errors.full_messages.each do |message| %>
+			<li><%= message %></li>
+		<% end %>
+		</ul>
+	</div>
+<% end %>
 <%= form_for(task) do |f| %>
 	<div class="field">
 		<p>
@@ -10,7 +22,7 @@
 		</p>
 		<p>
 		<%= f.label :Finish?%>
-		<%= f.check_box :done, {class: 'cnk'}, true, false %>
+		<%= f.check_box :done, {class: 'cnk'} %>
 		</p>
 		<p>
 		<%= f.label :コメント%>
