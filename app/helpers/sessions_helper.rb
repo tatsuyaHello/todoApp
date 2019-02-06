@@ -16,6 +16,12 @@ module SessionsHelper
 		!current_user.nil?
 	end
 
+	def logged_in_check
+		redirect_to root_url if current_user.nil?
+	end
+
+	
+
 	# 現在のユーザーをログアウトする
 	def log_out
 		session.delete(:user_id)
