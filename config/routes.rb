@@ -1,9 +1,8 @@
 Rails.application.routes.draw do
-  get 'homepage/home'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  root 'tasks#index'
-  resources :tasks
+  root 'homepage#home'
+  get '/signup' => 'users#new'
 
-  get 'signup' => 'users/new'
+  resources :tasks
+  resources :users
 
 end
